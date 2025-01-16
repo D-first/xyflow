@@ -31,6 +31,7 @@ export function createFilter({
     const pinchZoom = zoomOnPinch && event.ctrlKey;
 
     if (
+      (panOnDrag === true || (Array.isArray(panOnDrag) && panOnDrag.includes(1))) &&
       event.button === 1 &&
       event.type === 'mousedown' &&
       (isWrappedWithClass(event, `${lib}-flow__node`) || isWrappedWithClass(event, `${lib}-flow__edge`))
